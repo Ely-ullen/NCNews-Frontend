@@ -1,0 +1,23 @@
+.navBar {
+  border: 2px solid grey;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 2vw;
+}
+
+.topicList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topiclistItem {
+  font-family: "Oswald", sans-serif;
+  display: inline-block;
+  margin: 3px;
+  text-transform: uppercase;
+  padding-left: 20px;
+  padding-right: 20px;
+}

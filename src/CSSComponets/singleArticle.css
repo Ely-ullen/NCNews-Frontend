@@ -1,0 +1,13 @@
+.singleArticlePanel {
+  border: 2px solid grey;
+  border-radius: 8px;
+  padding: 1vw 2vw 1vw 2vw;
+}
+
+.singlearticleHeader {
+  margin: 0vw;
+}
+
+p {
+  margin: 0vw;
+}

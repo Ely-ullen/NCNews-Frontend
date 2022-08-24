@@ -1,0 +1,18 @@
+.ArticlesPanel {
+  border: 2px solid grey;
+  background-color: aliceblue;
+  border-radius: 8px;
+  padding: 5px;
+  margin-top: 0vw;
+  margin: 3vw;
+}
+.ArticlesPanel:hover {
+  border: 2px solid greenyellow;
+  cursor: pointer;
+}
+
+.articleHeader {
+  margin: 0;
+  font-size: 6vw;
+  color: midnightblue;
+}
