@@ -13,14 +13,7 @@ const Votes = ({ articleId }) => {
     });
   }, [articleId]);
 
-  const clickFunc = () => {
-    setClick(!click);
-    return true;
-  };
-
-  async function handleClick() {
-    await clickFunc();
-
+  const handleClick = () => {
     if (click) {
       setVoteCount((currVotes) => currVotes + 1);
       setButtonName("true");
@@ -31,7 +24,8 @@ const Votes = ({ articleId }) => {
       setButtonName("false");
       patchVotes({ inc_votes: -1 }, articleId);
     }
-  }
+    setClick(!click);
+  };
 
   return (
     <>
