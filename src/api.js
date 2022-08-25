@@ -54,6 +54,23 @@ const fetchCommentsData = (articleId) => {
     .then((res) => res.data);
 };
 
+const fetchUserList = () => {
+  return axios
+    .get("https://eb-nc-news-app.herokuapp.com/api/users")
+    .then((res) => res.data);
+};
+
+const CommentPoster = (commentForPosting, articleId) => {
+  return axios
+    .post(
+      `https://eb-nc-news-app.herokuapp.com/api/articles/${articleId}/comments`,
+      commentForPosting
+    )
+    .then(function (response) {
+      console.log(response);
+    });
+};
+
 export {
   fetchArticlesData,
   fetchArticlesByTopic,
@@ -62,4 +79,6 @@ export {
   fetchVotes,
   patchVotes,
   fetchCommentsData,
+  CommentPoster,
+  fetchUserList,
 };

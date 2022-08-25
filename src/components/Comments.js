@@ -2,9 +2,11 @@ import "../CSSComponets/comments.css";
 import { useEffect, useState } from "react";
 import Moment from "moment";
 import { fetchCommentsData } from "../api";
+import PostComments from "./PostComments";
 
 const Comments = ({ articleId }) => {
   const [commentsData, setCommentsData] = useState([]);
+  // const [newComment, setnewComment] = useState("");
 
   useEffect(() => {
     fetchCommentsData(articleId).then((comments) => {
@@ -20,11 +22,16 @@ const Comments = ({ articleId }) => {
   return (
     <>
       <h2>Comments</h2>
+      <PostComments
+        articleId={articleId}
+        commentsData={commentsData}
+        setCommentsData={setCommentsData}
+      />
       <div className="commentsPanel">
         {" "}
         {commentsData.map((comment) => {
           return (
-            <div className="comment">
+            <div className="comment" key={comment.comment_id}>
               <p className="name">
                 {comment.name}{" "}
                 <span id="dateSpan">

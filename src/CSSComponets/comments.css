@@ -27,3 +27,7 @@
 .body {
   margin: 3vw;
 }
+
+h2 {
+  display: inline;
+}
