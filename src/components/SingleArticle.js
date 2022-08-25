@@ -1,6 +1,7 @@
 import "../CSSComponets/singleArticle.css";
 import { fetchSingleArticle } from "../api";
 import Votes from "./Votes";
+import Comments from "./Comments";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -33,13 +34,13 @@ const SingleArticle = () => {
             {Moment(article.created_at).format("MMMM Do YYYY, h:mm:ss a")}
           </p>
           <hr></hr>
-          <article>{article.body}</article>
+          <article className="body">{article.body}</article>
           <hr></hr>
 
           <Votes articleId={article_id} />
         </section>
       </div>
-      {/* <Comments articleId={article_id} /> */}
+      <Comments articleId={article_id} />
     </>
   );
 };

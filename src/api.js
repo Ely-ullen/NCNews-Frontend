@@ -46,6 +46,14 @@ const patchVotes = (voteObject, articleId) => {
   );
 };
 
+const fetchCommentsData = (articleId) => {
+  return axios
+    .get(
+      `https://eb-nc-news-app.herokuapp.com/api/articles/${articleId}/comments`
+    )
+    .then((res) => res.data);
+};
+
 export {
   fetchArticlesData,
   fetchArticlesByTopic,
@@ -53,4 +61,5 @@ export {
   fetchSingleArticle,
   fetchVotes,
   patchVotes,
+  fetchCommentsData,
 };

@@ -2,6 +2,7 @@
   border: 2px solid grey;
   border-radius: 8px;
   padding: 1vw 2vw 1vw 2vw;
+  margin: 3vw;
 }
 
 .singlearticleHeader {
@@ -10,4 +11,8 @@
 
 p {
   margin: 0vw;
+}
+
+.body {
+  margin: 3vw;
 }
