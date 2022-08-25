@@ -1,8 +1,8 @@
 const axios = require("axios");
 
-const instance = axios.create({
-  baseURL: "https://eb-nc-news-app.herokuapp.com/api/",
-});
+// const instance = axios.create({
+//   baseURL: "https://eb-nc-news-app.herokuapp.com/api/",
+// });
 
 const fetchArticlesData = () => {
   return axios
@@ -11,7 +11,6 @@ const fetchArticlesData = () => {
 };
 
 const fetchArticlesByTopic = (topic_slug) => {
-  console.log(topic_slug);
   return axios
     .get(
       `https://eb-nc-news-app.herokuapp.com/api/articles?topic=${topic_slug}`
@@ -34,9 +33,24 @@ const fetchSingleArticle = (articleId) => {
     .then((res) => res.data.article);
 };
 
+const fetchVotes = (articleId) => {
+  return axios
+    .get(`https://eb-nc-news-app.herokuapp.com/api/articles/${articleId}`)
+    .then((res) => res.data.article.votes);
+};
+
+const patchVotes = (voteObject, articleId) => {
+  return axios.patch(
+    `https://eb-nc-news-app.herokuapp.com/api/articles/${articleId}`,
+    voteObject
+  );
+};
+
 export {
   fetchArticlesData,
   fetchArticlesByTopic,
   fetchTopics,
   fetchSingleArticle,
+  fetchVotes,
+  patchVotes,
 };

@@ -1,6 +1,6 @@
 import "../CSSComponets/singleArticle.css";
 import { fetchSingleArticle } from "../api";
-
+import Votes from "./Votes";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -35,10 +35,11 @@ const SingleArticle = () => {
           <hr></hr>
           <article>{article.body}</article>
           <hr></hr>
-          <span> Votes: {article.votes}</span>
-          <span> comments: {article.comment_count}</span>
+
+          <Votes articleId={article_id} />
         </section>
       </div>
+      {/* <Comments articleId={article_id} /> */}
     </>
   );
 };
