@@ -40,18 +40,10 @@ const fetchVotes = (articleId) => {
 };
 
 const patchVotes = (voteObject, articleId) => {
-  return axios
-    .patch(
-      `https://eb-nc-news-app.herokuapp.com/api/articles/${articleId}`,
-
-      voteObject
-    )
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  return axios.patch(
+    `https://eb-nc-news-app.herokuapp.com/api/articles/${articleId}`,
+    voteObject
+  );
 };
 
 export {

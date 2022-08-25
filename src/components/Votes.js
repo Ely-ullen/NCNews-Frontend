@@ -7,6 +7,8 @@ const Votes = ({ articleId }) => {
   const [voteCount, setVoteCount] = useState(0);
   const [click, setClick] = useState(true);
   const [buttonName, setButtonName] = useState("false");
+  const [voteError, setError] = useState(false);
+
   useEffect(() => {
     fetchVotes(articleId).then((votes) => {
       setVoteCount(votes);
@@ -15,9 +17,15 @@ const Votes = ({ articleId }) => {
 
   const handleClick = () => {
     if (click) {
+      patchVotes({ inc_votes: +1 }, articleId)
+        .then(() => {
+          setError(false);
+        })
+        .catch(() => {
+          setError(true);
+        });
       setVoteCount((currVotes) => currVotes + 1);
       setButtonName("true");
-      patchVotes({ inc_votes: +1 }, articleId);
     }
     if (click === false) {
       setVoteCount((currVotes) => currVotes - 1);
@@ -30,10 +38,10 @@ const Votes = ({ articleId }) => {
   return (
     <>
       <span>Votes:{voteCount} </span>
-
       <button className={buttonName} onClick={handleClick}>
         Vote!
       </button>
+      {voteError && <p>Error: Please try again</p>}
     </>
   );
 };

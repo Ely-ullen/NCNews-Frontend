@@ -39,6 +39,7 @@ const SingleArticle = () => {
           <Votes articleId={article_id} />
         </section>
       </div>
+      {/* <Comments articleId={article_id} /> */}
     </>
   );
 };
