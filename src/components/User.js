@@ -4,15 +4,9 @@ import { useContext, useEffect } from "react";
 import { CurrentUserContext } from "../contexts/currentUser";
 
 const User = () => {
-  const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
+  const { currentUser } = useContext(CurrentUserContext);
 
-  return <span id="userID">User: {currentUser} </span>;
-  //   {
-  /* <span id="userImage">
-          {" "}
-          <img className="NCperson" src={currentUser.avatar_url} />
-        </span> */
-  //   }
+  return <span id="userID">User: {currentUser.name} </span>;
 };
 
 export default User;

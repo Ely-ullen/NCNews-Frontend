@@ -61,14 +61,10 @@ const fetchUserList = () => {
 };
 
 const CommentPoster = (commentForPosting, articleId) => {
-  return axios
-    .post(
-      `https://eb-nc-news-app.herokuapp.com/api/articles/${articleId}/comments`,
-      commentForPosting
-    )
-    .then(function (response) {
-      console.log(response);
-    });
+  return axios.post(
+    `https://eb-nc-news-app.herokuapp.com/api/articles/${articleId}/comments`,
+    commentForPosting
+  );
 };
 
 export {

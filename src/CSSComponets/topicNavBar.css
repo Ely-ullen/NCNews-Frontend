@@ -5,7 +5,8 @@
   flex-direction: row;
   justify-content: center;
 
-  margin: 3vw;
+  margin-bottom: 2vw;
+  margin-top: 2vw;
 }
 
 .topicList {

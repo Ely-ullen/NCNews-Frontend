@@ -14,7 +14,7 @@ const UserList = () => {
   }, []);
 
   const handleClick = (event) => {
-    setCurrentUser(event.target.value);
+    setCurrentUser(JSON.parse(event.target.value));
   };
 
   return (
@@ -28,10 +28,10 @@ const UserList = () => {
             <button
               className="userButtons"
               onClick={handleClick}
-              key={user.username}
-              value={user.username}
+              key={JSON.stringify(user)}
+              value={JSON.stringify(user)}
             >
-              {user.username}
+              {user.name}
             </button>
           );
         })}

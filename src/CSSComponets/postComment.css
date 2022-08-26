@@ -10,3 +10,8 @@
   padding: 1vw 2vw 1vw 2vw;
   margin: 3vw;
 }
+
+#successMsg {
+  margin-left: 2vw;
+  background-color: greenyellow;
+}

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Moment from "moment";
 import { fetchCommentsData } from "../api";
 import PostComments from "./PostComments";
+import NewComment from "./NewComment";
 
 const Comments = ({ articleId }) => {
   const [commentsData, setCommentsData] = useState([]);

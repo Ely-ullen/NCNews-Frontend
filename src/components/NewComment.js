@@ -8,6 +8,7 @@ const NewComment = ({
   setcommentBox,
   commentsData,
   setCommentsData,
+  setSuccess,
 }) => {
   const [commentInput, setCommentInput] = useState("empty");
   const { currentUser } = useContext(CurrentUserContext);
@@ -30,18 +31,21 @@ const NewComment = ({
     event.preventDefault();
 
     const commentForPosting = {
-      username: currentUser,
+      username: currentUser.username,
       body: event.target[0].value,
+    };
+
+    const optomisticComment = {
+      name: currentUser.name,
+      body: event.target[0].value,
+      votes: 0,
     };
     if (commentInput === "valid") {
       CommentPoster(commentForPosting, articleId)
         .then(() => {
           setcommentBox(false);
-          setCommentsData([...commentsData], {
-            username: currentUser,
-            body: event.target[0].value,
-            created_at: Date.now(),
-          });
+          setCommentsData([optomisticComment, ...commentsData]);
+          setSuccess(true);
         })
 
         .catch(() => {

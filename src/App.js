@@ -10,7 +10,12 @@ import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  const [currentUser, setCurrentUser] = useState("tickle122");
+  const [currentUser, setCurrentUser] = useState({
+    username: "tickle122",
+    name: "Tom Tickle",
+    avatar_url:
+      "https://vignette.wikia.nocookie.net/mrmen/images/d…r-Tickle-9a.png/revision/latest?cb=20180127221953",
+  });
 
   return (
     <CurrentUserContext.Provider value={{ currentUser, setCurrentUser }}>
