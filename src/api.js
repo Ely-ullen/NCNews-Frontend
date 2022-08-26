@@ -6,10 +6,13 @@ const axios = require("axios");
 
 const fetchArticlesData = (sortBy, order) => {
   return axios
-    .get(
-      `https://eb-nc-news-app.herokuapp.com/api/articles?sort_by=${sortBy}&order_by=${order}`
-    )
-    .then((res) => res.data);
+    .get(`https://eb-nc-news-app.herokuapp.com/api/articles`, {
+      params: { sort_by: sortBy, order_by: order },
+    })
+    .then((res) => {
+      console.log(res.request.responseURL);
+      return res.data;
+    });
 };
 
 const fetchArticlesByTopic = (topic_slug) => {
