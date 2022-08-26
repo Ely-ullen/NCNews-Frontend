@@ -4,9 +4,11 @@ const axios = require("axios");
 //   baseURL: "https://eb-nc-news-app.herokuapp.com/api/",
 // });
 
-const fetchArticlesData = () => {
+const fetchArticlesData = (sortBy, order) => {
   return axios
-    .get("https://eb-nc-news-app.herokuapp.com/api/articles")
+    .get(
+      `https://eb-nc-news-app.herokuapp.com/api/articles?sort_by=${sortBy}&order_by=${order}`
+    )
     .then((res) => res.data);
 };
 
