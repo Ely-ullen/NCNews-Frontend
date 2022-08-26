@@ -1,6 +1,6 @@
 import "../CSSComponets/user.css";
-import UserList from "./UserList";
-import { useContext, useEffect } from "react";
+
+import { useContext } from "react";
 import { CurrentUserContext } from "../contexts/currentUser";
 
 const User = () => {

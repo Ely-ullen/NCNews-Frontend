@@ -4,10 +4,14 @@ const axios = require("axios");
 //   baseURL: "https://eb-nc-news-app.herokuapp.com/api/",
 // });
 
-const fetchArticlesData = () => {
+const fetchArticlesData = (sortBy, order) => {
   return axios
-    .get("https://eb-nc-news-app.herokuapp.com/api/articles")
-    .then((res) => res.data);
+    .get(`https://eb-nc-news-app.herokuapp.com/api/articles`, {
+      params: { sort_by: sortBy, order_by: order },
+    })
+    .then((res) => {
+      return res.data;
+    });
 };
 
 const fetchArticlesByTopic = (topic_slug) => {
@@ -19,12 +23,10 @@ const fetchArticlesByTopic = (topic_slug) => {
 };
 
 const fetchTopics = () => {
-  return (
-    axios
-      .get(`https://eb-nc-news-app.herokuapp.com/api/topics`)
-      // .then((response) => console.log(response))
-      .then((res) => res.data.topics)
-  );
+  return axios
+    .get(`https://eb-nc-news-app.herokuapp.com/api/topics`)
+
+    .then((res) => res.data.topics);
 };
 
 const fetchSingleArticle = (articleId) => {
@@ -57,13 +59,21 @@ const fetchCommentsData = (articleId) => {
 const fetchUserList = () => {
   return axios
     .get("https://eb-nc-news-app.herokuapp.com/api/users")
-    .then((res) => res.data);
+    .then((res) => {
+      return res.data;
+    });
 };
 
 const CommentPoster = (commentForPosting, articleId) => {
   return axios.post(
     `https://eb-nc-news-app.herokuapp.com/api/articles/${articleId}/comments`,
     commentForPosting
+  );
+};
+
+const commentDeleter = (commentId) => {
+  return axios.delete(
+    `https://eb-nc-news-app.herokuapp.com/api/comments/${commentId}`
   );
 };
 
@@ -77,4 +87,5 @@ export {
   fetchCommentsData,
   CommentPoster,
   fetchUserList,
+  commentDeleter,
 };

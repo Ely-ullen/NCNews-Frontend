@@ -1,0 +1,15 @@
+.deleteButton {
+  float: right;
+  padding: 1px 2px;
+  background-color: #dc143c;
+  opacity: 0.7;
+  color: white;
+}
+
+.deleteButton:hover {
+  opacity: 1;
+}
+
+.deleteMsg {
+  float: right;
+}

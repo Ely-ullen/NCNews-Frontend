@@ -7,13 +7,14 @@ import Moment from "moment";
 
 const ArticlesHome = () => {
   const [articlesData, setarticlesData] = useState([]);
-  //const [filteredState, setFilteredState] = useState("");
+  const [order, setOrder] = useState("DESC");
+  const [sortBy, setsortBy] = useState("votes");
 
   useEffect(() => {
-    fetchArticlesData().then((articles) => {
+    fetchArticlesData(sortBy, order).then((articles) => {
       setarticlesData(articles);
     });
-  }, []);
+  }, [sortBy, order]);
 
   const navigate = useNavigate();
 
@@ -21,8 +22,30 @@ const ArticlesHome = () => {
     navigate(`/article/${event}`);
   };
 
+  const handleChange = (event) => {
+    setOrder(event.target.value);
+  };
+
+  const handleSortByChange = (event) => {
+    setsortBy(event.target.value);
+  };
+
   return (
     <>
+      <nav className="Filters">
+        <select class="select" value={sortBy} onChange={handleSortByChange}>
+          <option value="created_at">date added</option>
+          <option value="author">author</option>
+          <option value="title">title</option>
+          <option value="votes">votes</option>
+        </select>
+
+        <select class="select" value={order} onChange={handleChange}>
+          <option value="ASC">ASC</option>
+          <option value="DESC">DESC</option>
+        </select>
+      </nav>
+      <br></br>
       {articlesData.map((article) => {
         return (
           <div
