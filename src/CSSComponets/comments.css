@@ -1,0 +1,33 @@
+.commentsPanel {
+  border: 2px solid grey;
+
+  border-radius: 8px;
+  padding: 5px;
+  margin-top: 0vw;
+  margin: 3vw;
+}
+
+.comment {
+  background-color: white;
+  border-radius: 8px;
+  padding: 5px;
+  margin-top: 0vw;
+  margin: 3vw;
+}
+
+#dateSpan {
+  font-size: small;
+  float: right;
+}
+
+.name {
+  margin-bottom: 3vw;
+}
+
+.body {
+  margin: 3vw;
+}
+
+h2 {
+  display: inline;
+}

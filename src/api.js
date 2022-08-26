@@ -46,6 +46,27 @@ const patchVotes = (voteObject, articleId) => {
   );
 };
 
+const fetchCommentsData = (articleId) => {
+  return axios
+    .get(
+      `https://eb-nc-news-app.herokuapp.com/api/articles/${articleId}/comments`
+    )
+    .then((res) => res.data);
+};
+
+const fetchUserList = () => {
+  return axios
+    .get("https://eb-nc-news-app.herokuapp.com/api/users")
+    .then((res) => res.data);
+};
+
+const CommentPoster = (commentForPosting, articleId) => {
+  return axios.post(
+    `https://eb-nc-news-app.herokuapp.com/api/articles/${articleId}/comments`,
+    commentForPosting
+  );
+};
+
 export {
   fetchArticlesData,
   fetchArticlesByTopic,
@@ -53,4 +74,7 @@ export {
   fetchSingleArticle,
   fetchVotes,
   patchVotes,
+  fetchCommentsData,
+  CommentPoster,
+  fetchUserList,
 };

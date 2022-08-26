@@ -18,7 +18,7 @@ const TopicNavBar = () => {
         <ul className="topicList">
           {topicsNav.map((topic) => {
             return (
-              <li className="topiclistItem">
+              <li className="topiclistItem" key={topic.slug}>
                 <Link to={`/topics/${topic.slug}`}>{topic.slug}</Link>
               </li>
             );

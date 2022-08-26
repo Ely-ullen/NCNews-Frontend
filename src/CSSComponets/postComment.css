@@ -1,0 +1,17 @@
+.postButton {
+  float: right;
+  margin-right: 3vw;
+}
+
+.commentPanel {
+  background-color: white;
+  border: 2px solid grey;
+  border-radius: 8px;
+  padding: 1vw 2vw 1vw 2vw;
+  margin: 3vw;
+}
+
+#successMsg {
+  margin-left: 2vw;
+  background-color: greenyellow;
+}
