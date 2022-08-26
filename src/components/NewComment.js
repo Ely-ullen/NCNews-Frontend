@@ -71,7 +71,7 @@ const NewComment = ({
         className={commentInput}
         id="newcomment"
         rows="6"
-        cols="50"
+        cols="30"
         onBlur={handleItemNameBlur}
       ></textarea>
 

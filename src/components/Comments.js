@@ -1,13 +1,14 @@
 import "../CSSComponets/comments.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Moment from "moment";
 import { fetchCommentsData } from "../api";
 import PostComments from "./PostComments";
-import NewComment from "./NewComment";
+import { CurrentUserContext } from "../contexts/currentUser";
+import DeleteComment from "./DeleteComment";
 
 const Comments = ({ articleId }) => {
   const [commentsData, setCommentsData] = useState([]);
-  // const [newComment, setnewComment] = useState("");
+  const { currentUser } = useContext(CurrentUserContext);
 
   useEffect(() => {
     fetchCommentsData(articleId).then((comments) => {
@@ -43,6 +44,14 @@ const Comments = ({ articleId }) => {
               <p className="body">{comment.body}</p>
 
               <span> Likes: {comment.votes}</span>
+              {comment.name === currentUser.name && (
+                <DeleteComment
+                  commentId={comment.comment_id}
+                  commentsData={commentsData}
+                  setCommentsData={setCommentsData}
+                />
+              )}
+              <br></br>
             </div>
           );
         })}

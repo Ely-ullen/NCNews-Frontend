@@ -5,7 +5,7 @@ import { CurrentUserContext } from "../contexts/currentUser";
 
 const UserList = () => {
   const [usersData, setUsersData] = useState([]);
-  const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
+  const { setCurrentUser } = useContext(CurrentUserContext);
 
   useEffect(() => {
     fetchUserList().then((users) => {

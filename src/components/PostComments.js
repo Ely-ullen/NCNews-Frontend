@@ -1,7 +1,6 @@
 import "../CSSComponets/postComment.css";
-import { useEffect, useState } from "react";
-import Moment from "moment";
-import { CommentPoster } from "../api";
+import { useState } from "react";
+
 import NewComment from "./NewComment";
 
 const PostComments = ({ articleId, commentsData, setCommentsData }) => {

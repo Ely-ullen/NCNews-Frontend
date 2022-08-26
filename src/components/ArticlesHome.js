@@ -28,7 +28,6 @@ const ArticlesHome = () => {
 
   const handleSortByChange = (event) => {
     setsortBy(event.target.value);
-    // orderDisplayed = event.target.value;
   };
 
   return (
@@ -38,8 +37,6 @@ const ArticlesHome = () => {
           <option value="created_at">date added</option>
           <option value="author">author</option>
           <option value="title">title</option>
-          <option value="body">body</option>
-          <option value="topic">topic</option>
           <option value="votes">votes</option>
         </select>
 
