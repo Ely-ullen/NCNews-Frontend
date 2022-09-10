@@ -18,13 +18,13 @@
 }
 
 .select {
+  border: 2px solid grey;
+  border-radius: 8px;
+  font-family: "Oswald", sans-serif;
   background: #ededed;
-  border: 1px solid #ccc;
-  padding: 0px 5px;
-  border-radius: 3px;
+  padding: 0vw 5vw;
   cursor: pointer;
   margin-right: 3vw;
   margin-bottom: 0vw;
   float: right;
-  font-family: "Oswald", sans-serif;
 }

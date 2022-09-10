@@ -1,5 +1,4 @@
 import "../CSSComponets/user.css";
-
 import { useContext } from "react";
 import { CurrentUserContext } from "../contexts/currentUser";
 

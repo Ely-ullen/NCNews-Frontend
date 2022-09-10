@@ -5,9 +5,13 @@
   text-align: left;
 
   display: inline;
-  border-bottom: 2px solid Black;
+  border-bottom: 4px solid Black;
 }
 
 h1 {
   margin-bottom: 3vw;
+}
+
+h1:hover {
+  cursor: pointer;
 }

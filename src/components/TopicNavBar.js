@@ -1,9 +1,9 @@
 import { fetchTopics } from "../api";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import "../CSSComponets/topicNavBar.css";
 
-const TopicNavBar = () => {
+
+const TopicNavBar = ({ handleTopic }) => {
   const [topicsNav, setTopics] = useState([]);
 
   useEffect(() => {
@@ -18,14 +18,19 @@ const TopicNavBar = () => {
         <ul className="topicList">
           {topicsNav.map((topic) => {
             return (
-              <li className="topiclistItem" key={topic.slug}>
-                <Link to={`/topics/${topic.slug}`}>{topic.slug}</Link>
-              </li>
+              <button
+                className="topiclistItem"
+                value={topic.slug}
+                key={topic.slug}
+                onClick={handleTopic}
+              >
+                {topic.slug}
+              </button>
             );
           })}
-          <li className="topiclistItem">
-            <Link to="/">all topics</Link>
-          </li>
+          <button className="topiclistItem" value={""} onClick={handleTopic}>
+            All Topics
+          </button>
         </ul>
       </nav>
     </>

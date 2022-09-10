@@ -4,7 +4,6 @@ import Votes from "./Votes";
 import Comments from "./Comments";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
 import Moment from "moment";
 
 const SingleArticle = () => {

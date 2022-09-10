@@ -1,25 +1,13 @@
 const axios = require("axios");
 
-// const instance = axios.create({
-//   baseURL: "https://eb-nc-news-app.herokuapp.com/api/",
-// });
-
-const fetchArticlesData = (sortBy, order) => {
+const fetchArticlesData = (sortBy, order, topic) => {
   return axios
     .get(`https://eb-nc-news-app.herokuapp.com/api/articles`, {
-      params: { sort_by: sortBy, order_by: order },
+      params: { sort_by: sortBy, order_by: order, topic: topic },
     })
     .then((res) => {
       return res.data;
     });
-};
-
-const fetchArticlesByTopic = (topic_slug) => {
-  return axios
-    .get(
-      `https://eb-nc-news-app.herokuapp.com/api/articles?topic=${topic_slug}`
-    )
-    .then((res) => res.data);
 };
 
 const fetchTopics = () => {
@@ -79,7 +67,6 @@ const commentDeleter = (commentId) => {
 
 export {
   fetchArticlesData,
-  fetchArticlesByTopic,
   fetchTopics,
   fetchSingleArticle,
   fetchVotes,
