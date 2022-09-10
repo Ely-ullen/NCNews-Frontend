@@ -8,8 +8,8 @@ It is a news website that enables users to log in, filter through articles, comm
 
 Please see the package.json file  to see a full list of all the dependencies used.
 
-You can seee the hosted website here:
+You can seee the hosted website here: https://eleanorncnewswebsite.netlify.app/
 
 
-Back end project:
+Back end project: https://github.com/Ely-ullen/Eleanor---BE-NC-News-
 
