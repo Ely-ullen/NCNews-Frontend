@@ -10,8 +10,8 @@ const Comments = ({ articleId }) => {
   const [commentsData, setCommentsData] = useState([]);
   const { currentUser } = useContext(CurrentUserContext);
 
-  useEffect((articleId) => {
-    fetchCommentsData(articleId).then((comments) => {
+  useEffect(() => {
+    fetchCommentsData([articleId]).then((comments) => {
       comments.sort((a, b) => {
         let da = new Date(a.created_at),
           db = new Date(b.created_at);

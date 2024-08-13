@@ -1,5 +1,6 @@
 const axios = require("axios");
 
+//requests:
 const fetchArticlesData = (sortBy, order, topic) => {
   return axios
     .get(`https://eb-nc-news-app-372b01f61a98.herokuapp.com/api/articles`, {
