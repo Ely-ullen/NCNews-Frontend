@@ -11,10 +11,10 @@ const SingleArticle = () => {
   const { article_id } = useParams();
 
   useEffect(() => {
-    fetchSingleArticle([article_id]).then((articleRes) => {
+    fetchSingleArticle(article_id).then((articleRes) => {
       setArticle(articleRes);
     });
-  }, []);
+  }, [article_id]);
 
   return (
     <>
