@@ -13,19 +13,22 @@ const fetchArticlesData = (sortBy, order, topic) => {
 const fetchTopics = () => {
   return axios
     .get(`https://eb-nc-news-app-372b01f61a98.herokuapp.com/api/topics`)
-
     .then((res) => res.data.topics);
 };
 
 const fetchSingleArticle = (articleId) => {
   return axios
-    .get(`https://eb-nc-news-app-372b01f61a98.herokuapp.com/api/articles/${articleId}`)
+    .get(
+      `https://eb-nc-news-app-372b01f61a98.herokuapp.com/api/articles/${articleId}`
+    )
     .then((res) => res.data.article);
 };
 
 const fetchVotes = (articleId) => {
   return axios
-    .get(`https://eb-nc-news-app-372b01f61a98.herokuapp.com/api/articles/${articleId}`)
+    .get(
+      `https://eb-nc-news-app-372b01f61a98.herokuapp.com/api/articles/${articleId}`
+    )
     .then((res) => res.data.article.votes);
 };
 
@@ -39,7 +42,7 @@ const patchVotes = (voteObject, articleId) => {
 const fetchCommentsData = (articleId) => {
   return axios
     .get(
-      `https://eb-nc-news-app-372b01f61a98.herokuapp.com/api/articles/${articleId}/comments`
+      `https://eb-nc-news-app-372b01f61a98.herokuapp.com/api/comments/${articleId}/comments`
     )
     .then((res) => res.data);
 };
@@ -54,7 +57,7 @@ const fetchUserList = () => {
 
 const CommentPoster = (commentForPosting, articleId) => {
   return axios.post(
-    `https://eb-nc-news-app-372b01f61a98.herokuapp.com/api/articles/${articleId}/comments`,
+    `https://eb-nc-news-app-372b01f61a98.herokuapp.com/api/comments/${articleId}/comments`,
     commentForPosting
   );
 };
