@@ -10,7 +10,7 @@ const SingleArticle = () => {
   const [article, setArticle] = useState([]);
   const { article_id } = useParams();
 
-  useEffect(() => {
+  useEffect((article_id) => {
     fetchSingleArticle(article_id).then((articleRes) => {
       setArticle(articleRes);
     });
